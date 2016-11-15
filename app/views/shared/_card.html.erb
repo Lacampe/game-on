@@ -12,13 +12,15 @@
   <div class="card">
     <img class="card-img-top" src="<%= image %>" alt="Card image cap">
     <div class="card-block">
-      <h4 class="card-text"><%= space.category %></h4>
+      <h4 class="card-text"><%= space.name %></h4>
       <p class="card-text"><%= space.address %></p>
-    </div>
-    <div class="banner-price">
+      <div class="banner-price">
       <p>$<%= space.price_per_hour %>/hr</p>
-    </div>
-    <img class="card-user avatar" src="<%= user_image %>">
+      </div>
+      <div class="banner-category"> <%= image_tag "#{space.category}.png" %></div>
+
+      </div>
+
   </div>
 </div>
 
