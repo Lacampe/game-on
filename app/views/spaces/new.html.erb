@@ -1,2 +1,11 @@
-<h1>Spaces#new</h1>
-<p>Find me in app/views/spaces/new.html.erb</p>
+<h1>Add a new venue</h1>
+<%= simple_form_for(@space) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :address %>
+  <%= f.input :price_per_hour %>
+
+  <%= f.button :submit %>
+<% end %>
