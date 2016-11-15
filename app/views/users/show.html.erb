@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <h1><%= @user.first_name %></h1>
+  <h3><em>Member since <%= @user.remember_created_at %></h3>
+
+  <div class="container">
+  <div class="row" class="col-xs-8 col-offset-xs-2">
+      <div class="tabs">
+        <a class="tab active" href="#">
+          <h3>Profile</h3>
+          <p></p>
+        </a>
+        <a class="tab" href="#">
+          <h3></h3>
+          <p>Bookings</p>
+        </a>
+        <a class="tab" href="#">
+          <h3>19</h3>
+          <p>Reviews</p>
+        </a>
+      </div>
+    </div>
+  </div>
