@@ -30,7 +30,7 @@
       <% if current_user.photo %>
         <% user_image = cl_image_path(current_user.photo.path, width: 200, height: 200, crop: :thumb, gravity: :face) %>
       <% else %>
-        <%= user_image = image_path('logo.png', width: 100, height: 100) %>
+        <% user_image = image_path('blank-avatar.png', width: 100, height: 100) %>
       <% end %>
 
       <div class="navbar-wagon-item">
