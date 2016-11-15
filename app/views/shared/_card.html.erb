@@ -4,15 +4,23 @@
   <% else %>
     <%= image = image_path('logo.png') %>
   <% end %>
+  <% if space.user.photo %>
+    <% user_image = cl_image_path(space.user.photo.path, width: 200, height: 200, crop: :thumb, gravity: :face) %>
+  <% else %>
+    <%= user_image = image_path('logo.png') %>
+  <% end %>
   <div class="card">
     <img class="card-img-top" src="<%= image %>" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-text"><%= space.category %></h4>
       <p class="card-text"><%= space.address %></p>
     </div>
+    <div class="banner-price">
+      <p>$<%= space.price_per_hour %>/hr</p>
+    </div>
+    <img class="card-user avatar" src="<%= user_image %>">
   </div>
 </div>
-
 
 
 
