@@ -11,7 +11,22 @@
 .card-block {
   margin: 5px;
 }
+
 img.card-img-top {
   width: 100%;
 }
 
+.card-user {
+  position: absolute;
+  bottom: 80px;
+  right: 40px;
+}
+
+.banner-price {
+  position: absolute;
+  bottom: 2px;
+  right: 20px;
+  color: #575757;
+  width: 60px;
+  text-align: center;
+}
