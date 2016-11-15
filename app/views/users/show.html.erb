@@ -6,7 +6,11 @@
         <h3><em>Member since <%= I18n.l(@user.created_at, format: "%B %Y") %></em></h3>
       </div>
       <div class="col-xs-6 col-md-3 col-md-offset-2">
-      <%= cl_image_tag @user.photo.path, transformation: [{width: 250, height: 250, gravity: 'face', radius: 'max', crop: 'thumb'}, {width: 100}] %>
+      <% if @user.photo %>
+        <%= cl_image_tag @user.photo.path, transformation: [{width: 250, height: 250, gravity: 'face', radius: 'max', crop: 'thumb'}, {width: 100}] %>
+      <% else %>
+        <%= image_tag "no_image.png", class: "avatar-extra-large" %>
+      <% end %>
       </div>
     </div>
   </div>
