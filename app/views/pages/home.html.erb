@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url(<%= image_path('tennis-background.jpg') %>)">
+  <div class="banner-content">
+    <h1>SEARCH. BOOK. PLAY.</h1>
+    <p>Very cool stuff, useful and smart</p>
+    <%= simple_form_for(@space) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :stars %>
+
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
