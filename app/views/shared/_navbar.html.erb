@@ -27,17 +27,23 @@
       <% end %>
 
       <!-- Profile picture and dropdown -->
+      <% if current_user.photo %>
+        <% user_image = cl_image_path(current_user.photo.path, width: 200, height: 200, crop: :thumb, gravity: :face) %>
+      <% else %>
+        <%= user_image = image_path('logo.png') %>
+      <% end %>
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <img src="<%= user_image %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to user_path(current_user) do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
