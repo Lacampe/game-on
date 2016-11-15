@@ -8,8 +8,8 @@
 
 # seed users, name, email, password, prof pic
 User.destroy_all
-20.times do
-  url = Faker::Avatar.image
+40.times do
+  url = "http://xdesktopwallpapers.com/wp-content/uploads/2012/07/Scott%20Porter%20Looking%20At%20Camera%20And%20White%20Background.jpg"
   user = User.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Internet.password)
   user.save!
   user.photo_url = url
@@ -22,8 +22,8 @@ urls = [
   'https://aauconnect.com/wp-content/uploads/2014/05/3D-indoor-basketball-court.jpg',
   'http://willamalane.org/wp-content/uploads/2014/07/SportCourt-8.jpg'
 ]
-8.times do
-  space = Space.new(address: Faker::Address.street_address, price_per_hour: rand(30..200), category: Faker::Team.sport, user_id: rand(1..20))
+20.times do
+  space = Space.new(name: Faker::Educator.secondary_school, address: "London", price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..40))
   space.save!
   space.photo_urls = urls # Multi-upload happens here
 end
