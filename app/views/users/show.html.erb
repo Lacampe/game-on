@@ -1,22 +1,29 @@
 <div class="container">
-  <h1><%= @user.first_name %></h1>
-  <h3><em>Member since <%= @user.remember_created_at %></h3>
-
-  <div class="container">
-  <div class="row" class="col-xs-8 col-offset-xs-2">
+  <div class="container" id='user-show-info'>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h1><%= @user.first_name %></h1>
+        <h3><em>Member since <%= I18n.l(@user.created_at, format: "%B %Y") %></em></h3>
+      </div>
+      <div class="col-xs-6 col-md-3 col-md-offset-2">
+      <%= cl_image_tag @user.photo.path, transformation: [{width: 250, height: 250, gravity: 'face', radius: 'max', crop: 'thumb'}, {width: 100}] %>
+      </div>
+    </div>
+  </div>
+  <div class="container" class="col-xs-8 col-offset-xs-2">
+    <div class="row">
       <div class="tabs">
         <a class="tab active" href="#">
           <h3>Profile</h3>
           <p></p>
         </a>
         <a class="tab" href="#">
-          <h3></h3>
-          <p>Bookings</p>
+          <h3>3 Bookings</h3>
         </a>
         <a class="tab" href="#">
-          <h3>19</h3>
-          <p>Reviews</p>
+          <h3>19 Reviews</h3>
         </a>
       </div>
     </div>
   </div>
+</div>
