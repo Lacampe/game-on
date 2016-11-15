@@ -1,0 +1,16 @@
+<div class="col-xs-12 col-sm-6 col-md-4">
+   <% if space.photos %>
+    <% image = cl_image_path(space.photos.first.path, width: 300, height: 200, crop: :fill) %>
+  <% else %>
+    <%= image = image_path('logo.png') %>
+  <% end %>
+
+     <div class="card"
+     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= image %>')">
+     <div class="card-description">
+      <h2 class="text-danger"> <%= space.category %></h2>
+      <p> <%= space.address %> </p>
+    </div>
+  </div>
+</div>
