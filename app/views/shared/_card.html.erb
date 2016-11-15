@@ -4,11 +4,7 @@
   <% else %>
     <%= image = image_path('logo.png') %>
   <% end %>
-  <% if space.user.photo %>
-    <% user_image = cl_image_path(space.user.photo.path, width: 200, height: 200, crop: :thumb, gravity: :face) %>
-  <% else %>
-    <%= user_image = image_path('logo.png') %>
-  <% end %>
+
   <div class="card">
     <img class="card-img-top" src="<%= image %>" alt="Card image cap">
     <div class="card-block">
@@ -26,12 +22,3 @@
 
 
 
-
-<!-- <div class="card"
-style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-url('<%= image %>')">
-<div class="card-description">
-  <h2 class="text-danger"> <%= space.category %></h2>
-  <p> <%= space.address %> </p>
-</div>
-</div> -->
