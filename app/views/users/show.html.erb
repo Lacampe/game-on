@@ -9,7 +9,7 @@
       <% if @user.photo %>
         <%= cl_image_tag @user.photo.path, transformation: [{width: 250, height: 250, gravity: 'face', radius: 'max', crop: 'thumb'}, {width: 100}] %>
       <% else %>
-        <%= image_tag "no_image.png", class: "avatar-extra-large" %>
+        <%= image_tag "blank-avatar.png", class: "avatar-extra-large" %>
       <% end %>
       </div>
     </div>
