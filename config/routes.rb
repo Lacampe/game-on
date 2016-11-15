@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   mount Attachinary::Engine => "/attachinary"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users
+
+  resources :spaces
 end
