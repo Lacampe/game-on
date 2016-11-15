@@ -2,14 +2,11 @@
   <div class="banner-content">
     <h1>SEARCH. BOOK. PLAY.</h1>
     <p>Very cool stuff, useful and smart</p>
-    <%= simple_form_for(@space) do |f| %>
-      <%= f.error_notification %>
-
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :stars %>
-
-      <%= f.button :submit %>
+    <%= form_tag spaces_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
     <% end %>
   </div>
 </div>
