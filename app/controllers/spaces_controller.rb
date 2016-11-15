@@ -14,6 +14,7 @@ class SpacesController < ApplicationController
     @space = Space.new(space_params)
     @space.user = current_user
     @space.save
+    redirect_to space_path(@space)
   end
 
   def edit
@@ -28,6 +29,6 @@ class SpacesController < ApplicationController
   private
 
   def space_params
-    params.requite(:space).permit(:name, :category, :address, :price_per_hour, photos:[])
+    params.require(:space).permit(:name, :category, :address, :price_per_hour, photos:[])
   end
 end
