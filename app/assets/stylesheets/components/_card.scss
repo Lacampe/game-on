@@ -1,0 +1,55 @@
+.card-text {
+  color: #575757;
+}
+
+.card {
+  border: 1px solid darkgrey;
+  padding: 2px;
+  margin: 10px 0px 5px 0px;
+}
+
+.card-block {
+  margin: 5px;
+}
+
+.card-block h4 {
+  font-size: 16px;
+}
+
+.card-block p {
+  font-size: 13px;
+}
+
+img.card-img-top {
+  width: 100%;
+}
+
+.banner-category img {
+  position: absolute;
+  bottom: 45px;
+  right: 28px;
+  width: 7%;
+}
+
+.banner-price {
+  position: absolute;
+  bottom: 2px;
+  right: 12px;
+  color: #575757;
+  width: 60px;
+  text-align: center;
+}
+
+.banner-price p {
+  font-size: 11px !important;
+}
+
+
+// .card-user {
+//   position: absolute;
+//   top: 20px;
+//   right: 20px;
+//   color: white;
+//   width: 50px;
+//   height: 50px;
+// }
