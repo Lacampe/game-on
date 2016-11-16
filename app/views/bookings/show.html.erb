@@ -1,0 +1,23 @@
+<% content_for :title, "GameOn - Booking created!" %>
+<div class="container-bookings add-margins">
+  <h2>Congratulations!</h2>
+  <h3>You have successfully booked:</h3>
+  <div class="details">
+  <% booking = @space.bookings.last %>
+  <h4>Where:</h4>  <%= link_to booking.space.name, space_path(booking.space)%>
+   <%= booking.space.address %>
+  <br>
+  <h4>When:</h4> <%= booking.start_time.day %>/<%= booking.start_time.month %>/<%= booking.start_time.year %>
+
+  at
+
+  <%= booking.start_time.strftime("%H:%M") %>
+  <br>
+  <% duration_min = booking.end_time - booking.start_time %>
+  <h4>Duration:</h4> <%= (duration_min / 60/60).round(1) %> hours
+
+  <br>
+  <h4>Price:</h4> £<%= (duration_min / 60/60 * booking.space.price_per_hour).round %>
+  <br>
+  </div>
+</div>
