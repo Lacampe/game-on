@@ -7,5 +7,7 @@
 //= require underscore
 //= require gmaps/google
 //= require bootstrap-datepicker
-//= require_tree .
 
+$(document).ready(function () {
+  $('.datepicker').datepicker();
+});
