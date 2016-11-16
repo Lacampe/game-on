@@ -6,6 +6,8 @@ class SpacesController < ApplicationController
   end
 
   def show
+    @space = Space.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
