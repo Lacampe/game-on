@@ -2,7 +2,11 @@ class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :update, :destroy, :edit]
 
   def index
-    @spaces = Space.where.not(latitude: nil, longitude: nil)
+
+    @spaces = Space.all
+
+    @spaces = @spaces.near(params[:location], 10) if params[:location].present?
+    @spaces = @spaces.where(category: params[:category]) if params[:category].present?
 
     @markers = Gmaps4rails.build_markers(@spaces) do |space, marker|
       marker.lat space.latitude
