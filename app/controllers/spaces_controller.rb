@@ -1,5 +1,6 @@
 class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :update, :destroy, :edit]
+  # before_action :set_user, only: [:show]
 
   def index
 
@@ -17,6 +18,7 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @user = @space.user
     @booking = Booking.new
 
     @markers = Gmaps4rails.build_markers(@space) do |space,marker|
@@ -32,7 +34,7 @@ class SpacesController < ApplicationController
 
   def create
     @space = Space.new(space_params)
-    @space.user = current_user
+    # @space.user = current_user
     @space.save
     redirect_to space_path(@space)
   end
@@ -52,7 +54,11 @@ class SpacesController < ApplicationController
     @space = Space.find(params[:id])
   end
 
+  # def set_user
+  #   @user = User.find(params[:user_id])
+  # end
+
   def space_params
-    params.require(:space).permit(:name, :category, :address, :price_per_hour, :description, photos:[])
+    params.require(:space).permit(:name, :category, :address, :price_per_hour, :user_id, :description, photos:[])
   end
 end
