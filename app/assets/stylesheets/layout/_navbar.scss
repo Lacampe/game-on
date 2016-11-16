@@ -51,18 +51,24 @@
 /* Navbar right button */
 .navbar-wagon-button {
   margin-left: 10px;
-  padding: 0 20px;
-  border-radius: 20em;
+  padding: 0 15px;
+  border-radius: 5px;
   line-height: 40px;
-  background-color: #00CD82;
+  background-color: rgb(46, 184, 46);
   color: white;
   font-size: 14px;
-  border: 1px solid #00CD82;
+  border: 1px solid rgb(46, 184, 46);
+  box-shadow: 1px 1px 2px #cccccc;
 }
 .navbar-wagon-button:hover {
   color: white;
   background: #00CD82;
   border-color: #009462;
+}
+
+/* Navbar notification */
+.green-theme {
+  background-color: rgb(46, 184, 46);
 }
 
 /* Navbar search form */
