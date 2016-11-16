@@ -1,4 +1,6 @@
 class SpacesController < ApplicationController
+  before_action :set_space, only: [:show, :update, :destroy, :edit]
+
   def index
     @spaces = Space.where.not(latitude: nil, longitude: nil)
 
@@ -36,6 +38,10 @@ class SpacesController < ApplicationController
   end
 
   private
+
+  def set_space
+    @space = Space.find(params[:id])
+  end
 
   def space_params
     params.require(:space).permit(:name, :category, :address, :price_per_hour, photos:[])
