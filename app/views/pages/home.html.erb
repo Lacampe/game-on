@@ -6,15 +6,15 @@
     </div>
     <%= form_tag spaces_path, method: "get", class: "form-inline" do %>
       <div class="form-group">
-        <%= select_tag :category, options_for_select([["Football"], ["Basketball"], ["Tennis"], ["Squash"]]), class: "form-control", prompt: "Choose your sport" %>
+        <%= select_tag :category, options_for_select([["Football"], ["Basketball"], ["Tennis"], ["Squash"]]), class: "form-control input-lg", prompt: "Choose your sport" %>
       </div>
       <div class="form-group">
-        <%= text_field_tag(:location, "", class: "form-control", placeholder: "Location") %>
+        <%= text_field_tag(:location, "", class: "form-control input-lg", placeholder: "Location") %>
       </div>
       <div class="form-group">
-        <%= text_field_tag(:date, "", class: "form-control datepicker", placeholder: "Date") %>
+        <%= text_field_tag(:date, "", class: "form-control datepicker input-lg", placeholder: "Date") %>
       </div>
-      <button type="submit" class="btn btn-danger">Search</button>
+      <button type="submit" class="btn btn-lg btn-danger">Search</button>
     <% end %>
   </div>
 </div>

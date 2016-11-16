@@ -16,19 +16,18 @@
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-green">3</div>
+          <div class="badge green-theme">3</div>
         </div>
       <% end %>
 
       <!-- Profile picture and dropdown -->
-      <% if current_user.photo %>
-        <% user_image = cl_image_path(current_user.photo.path, width: 200, height: 200, crop: :thumb, gravity: :face) %>
-      <% elsif current_user.facebook_picture_url %>
-        <% user_image = image_path(current_user.facebook_picture_url) %>
-      <% else %>
-        <% user_image = image_path('blank-avatar.png', width: 500, height: 500) %>
-      <% end %>
-
+        <% if current_user.photo %>
+          <% user_image = cl_image_path(current_user.photo.path, width: 200, height: 200, crop: :thumb, gravity: :face) %>
+        <% elsif current_user.facebook_picture_url %>
+          <% user_image = image_path(current_user.facebook_picture_url) %>
+        <% else %>
+          <% user_image = image_path('blank-avatar.png', width: 500, height: 500) %>
+        <% end %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <img src="<%= user_image %>" class="avatar-medium dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
