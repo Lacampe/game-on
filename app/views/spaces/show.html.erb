@@ -1,11 +1,11 @@
-<div class="wrapper">
 <% content_for :title, "GameOn - #{@space.name}" %>
+<div class="wrapper">
  <% if @space.photos %>
- <% image =  cl_image_path(@space.photos.first.path, width: 1250, height: 400, crop: :fill) %>
+ <% image =  cl_image_path(@space.photos.first.path, crop: :fit) %>
  <% else %>
  <% image = image_path('logo.png') %>
  <% end %>
- <%= image_tag(image) %>
+ <%= image_tag(image, class: "space-image") %>
 </div>
 
 <div class="container">
@@ -14,6 +14,7 @@
       <div class="row">
         <div class="card-space col-xs-12">
           <h1><%= @space.name %></h1>
+          <br>
           <p>Location: <em><%= @space.address %></em></p>
           <p>Facility: <em><%= @space.category %></em></p>
           <br>
