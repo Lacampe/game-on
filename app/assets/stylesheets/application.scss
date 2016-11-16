@@ -7,9 +7,18 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "bootstrap-datepicker";
 
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+.add-margins {
+  margin: 100px 500px 100px 500px;
+}
+
+.form-actions {
+  padding: 2px;
+}

@@ -1,12 +1,18 @@
-<h1>Add a new venue</h1>
+<br>
+<h1 class="text-center">Rent your venue through us</h1>
+ <% content_for :title, "GameOn - register your venue!" %>
+<div class="wrapper add-margins">
 <%= simple_form_for(@space) do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :name %>
   <%= f.input :category, collection: ["Squash", "Basketball", "Football", "Tennis"], prompt: "Choose your sport" %>
   <%= f.input :address %>
-  <%= f.input :price_per_hour %>
+  <%= f.input :price_per_hour, label: "Price (£)" %>
   <%= f.input :photos, as: :attachinary %>
-
+  <%= f.input :description %>
+<div class="buttons text-center">
   <%= f.button :submit %>
+</div>
 <% end %>
+</div>

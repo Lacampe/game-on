@@ -1,39 +1,59 @@
 <% content_for :title, "Listings" %>
 
-<div class="spaces-page">
-  <div id="map" style="width: 100%; height: 600px;">
-    <% content_for(:after_js) do %>
-      <%= javascript_tag do %>
-        $(document).ready(function() {
-          var handler = Gmaps.build('Google');
-          handler.buildMap({ internal: { id: 'map' } }, function() {
-            markers = handler.addMarkers(<%= raw @markers.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-            if (markers.length == 0) {
-              handler.getMap().setZoom(2);
-            } else if (markers.length == 1) {
-              handler.getMap().setZoom(14);
-            }
-          });
-        });
-      <% end %>
-    <% end %>
-  </div>
-
-  <div class="results-cards">
-    <div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6" id="results">
       <div class="row">
-        <% @spaces.each do |space|%>
-          <%= link_to(space) do %>
-            <%= render 'shared/card', space: space %>
-          <% end %>
+        <% @spaces.each do |space| %>
+          <div class="col-sm-6">
+            <%= link_to(space) do %>
+              <%= render 'shared/card', space: space %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
+    <div class="col-sm-6">
+      <div class="spaces-page">
+        <div id="map">
+          <% content_for(:after_js) do %>
+            <%= javascript_tag do %>
+              $(document).ready(function() {
+                var handler = Gmaps.build('Google');
+                handler.buildMap({ internal: { id: 'map' } }, function() {
+                  markers = handler.addMarkers(<%= raw @markers.to_json %>);
+                  handler.bounds.extendWith(markers);
+                  handler.fitMapToBounds();
+                  if (markers.length == 0) {
+                    handler.getMap().setZoom(2);
+                  } else if (markers.length == 1) {
+                    handler.getMap().setZoom(14);
+                  }
+                });
+              });
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
