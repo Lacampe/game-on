@@ -1,4 +1,7 @@
-<h1>Add a new venue</h1>
+<br>
+<h1 class="text-center">Rent your venue through us</h1>
+ <% content_for :title, "GameOn - register your venue!" %>
+<div class="wrapper add-margins">
 <%= simple_form_for(@space) do |f| %>
   <%= f.error_notification %>
 
@@ -7,6 +10,8 @@
   <%= f.input :address %>
   <%= f.input :price_per_hour %>
   <%= f.input :photos, as: :attachinary %>
-
+<div class="buttons text-center">
   <%= f.button :submit %>
+</div>
 <% end %>
+</div>
