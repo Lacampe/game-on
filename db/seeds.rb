@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# seed users, name, email, password, prof pic
+
+# the below will delete all resources in cloudinary - they remain cached for 30 days, so it does not free up space immediately
+# Cloudinary::Api.delete_all_resources
+
 User.destroy_all
 40.times do
   url = "http://xdesktopwallpapers.com/wp-content/uploads/2012/07/Scott%20Porter%20Looking%20At%20Camera%20And%20White%20Background.jpg"
@@ -18,12 +21,18 @@ end
 # seed spaces, name
 Space.destroy_all
 
+
 urls = [
-  'https://aauconnect.com/wp-content/uploads/2014/05/3D-indoor-basketball-court.jpg',
-  'http://willamalane.org/wp-content/uploads/2014/07/SportCourt-8.jpg'
+  'http://www.courttech.biz/wp-content/uploads/02-01-01-fb04.jpg',
+  'http://images.hotels4u.com/Travel_Images/Resort_118/Building_982/basic3652_AT_THE_blue_sea_club_caleta_dorada.jpg'
 ]
-20.times do
-  space = Space.new(name: Faker::Educator.secondary_school, address: "London", price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..40))
+
+addresses = ["SW1X 8NX", "SW17 8DA", "SW11 3ES", "SW2 2QL", "SW18 3JT", "SW10 9QH", "SW15 6ST", "SW3 5HL", "SW4 7ED", "SW1A 1LY", "SW4 7UJ",
+"SW4 7NH", "SW19 4YB", "SW19 1DR", "SW19 8YB", "SW18 4NL", "SW11 1AS", "SW19 2TQ", "SW8 2LE", "SW17 7BE"]
+
+addresses.each do |address|
+  space = Space.new(name: Faker::Educator.secondary_school, address: address, price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..40),
+    description: "This is a nice court. Just repolished last month. Only white-soled shoes allowed. No food and drink (just water) on the court.")
   space.save!
   space.photo_urls = urls # Multi-upload happens here
 end

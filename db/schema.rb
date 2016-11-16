@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20161116105542) do
 
   # These are extensions that must be enabled in order to support this database
@@ -51,6 +52,9 @@ ActiveRecord::Schema.define(version: 20161116105542) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.text     "description"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 

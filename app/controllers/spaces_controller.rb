@@ -2,12 +2,19 @@ class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :update, :destroy, :edit]
 
   def index
-    @spaces = Space.all
+    @spaces = Space.where.not(latitude: nil, longitude: nil)
+
+    @markers = Gmaps4rails.build_markers(@spaces) do |space, marker|
+      marker.lat space.latitude
+      marker.lng space.longitude
+      # marker.infowindow render_to_string(partial: "/spaces/map_box", locals: { space: space })
+    end
   end
 
   def show
     @space = Space.find(params[:id])
     @booking = Booking.new
+
   end
 
   def new
