@@ -8,8 +8,9 @@
   <%= f.input :name %>
   <%= f.input :category, collection: ["Squash", "Basketball", "Football", "Tennis"], prompt: "Choose your sport" %>
   <%= f.input :address %>
-  <%= f.input :price_per_hour %>
+  <%= f.input :price_per_hour, label: "Price (£)" %>
   <%= f.input :photos, as: :attachinary %>
+  <%= f.input :description %>
 <div class="buttons text-center">
   <%= f.button :submit %>
 </div>
