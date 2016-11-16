@@ -1,0 +1,13 @@
+.container-fluid {
+  padding: 0 0 0 10px;
+}
+
+#map {
+  width: 100%;
+  height: calc(100vh - 70px);
+}
+
+#results {
+  height: calc(100vh - 70px);
+  overflow: scroll;
+}
