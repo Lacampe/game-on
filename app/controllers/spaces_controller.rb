@@ -15,6 +15,11 @@ class SpacesController < ApplicationController
     @space = Space.find(params[:id])
     @booking = Booking.new
 
+    @markers = Gmaps4rails.build_markers(@space) do |space,marker|
+      marker.lat space.latitude
+      marker.lng space.longitude
+    end
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
   end
 
   def new
