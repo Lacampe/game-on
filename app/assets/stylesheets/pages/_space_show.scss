@@ -1,0 +1,10 @@
+#sticky {
+  margin-top: 40px;
+  position: relative;
+}
+
+#sticky.stick {
+    margin-top: 10px;
+    position: fixed;
+    top: 0;
+}
