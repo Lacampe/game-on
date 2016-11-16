@@ -1,22 +1,39 @@
-<<<<<<< HEAD
+<div class="wrapper">
+  <% if @space.photos %>
+  <%= cl_image_path(@space.photos.first, height: 200, crop: :fill) %>
+  <% else %>
+  <%= image_path('logo.png') %>
+  <% end %>
+  <
+</div>
 <div class="container">
-  <div class="container">
     <div class="row">
-      <div class="card-space col-xs-12 col-lg-7">
-        <h1><%= @space.name %></h1>
-        <p><strong>Location:</strong> <em><%= @space.address %></em></p>
-        <p>Facility: <em><%= @space.category %></em></p>
+      <div class="col-xs-12 col-lg-6">
+        <div class="row">
+          <div class="card-space col-xs-12">
+            <h1><%= @space.name %></h1>
+            <p>Location: <em><%= @space.address %></em></p>
+            <p>Facility: <em><%= @space.category %></em></p>
+          </div>
+          <div class="card-space col-xs-12">
+            <h5>Description: @space.description </h5>
+          </div>
+        </div>
       </div>
-      <div class="card-space col-xs-12 col-lg-5">
-        <p>Price per hour: £<%= @space.price_per_hour %></p>
-        <p>Make a Booking:</p>
-        <%= render 'shared/new_booking', space: @space, booking: @booking %>
-      </div>
-      <div class="card-space col-xs-12 col-lg-7">
-        <h5>Description: @space.description </h5>
+      <div class="row col-xs-12 col-lg-5 col-lg-offset-1">
+        <div class="card-space">
+          <h3>Price per hour: £<%= @space.price_per_hour %></h3>
+          <%= render 'shared/new_booking', space: @space, booking: @booking %>
+        </div>
       </div>
     </div>
+
+</div>
+<div class="row">
+  <div class="card-space col-xs-12">
+    <h3>Map</h3>
   </div>
+</div>
 
 
 
