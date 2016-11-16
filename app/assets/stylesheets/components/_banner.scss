@@ -1,5 +1,4 @@
 .banner {
-  color: white;
   text-align: center;
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -8,10 +7,15 @@
   align-items: center;
   justify-content: center;
 }
+.banner #presentation {
+  margin-top: -220px;
+  margin-bottom: 100px;
+}
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 .banner p {
   font-size: 20px;
