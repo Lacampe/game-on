@@ -18,7 +18,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :space
 
-  before_validation do
+  after_initialize do
     self.ends_at = starts_at + @duration.to_i.hours if @duration
   end
 

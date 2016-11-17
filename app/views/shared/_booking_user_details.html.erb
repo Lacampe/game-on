@@ -1,0 +1,11 @@
+<h4>Requested by:</h4>
+    <% if user.photo %>
+    <%= cl_image_tag user.photo.path, transformation: [{width: 250, height: 250, gravity: 'face', radius: 'max', crop: 'thumb'}, {width: 100}], class: "avatar-large" %>
+    <% elsif user.facebook_picture_url %>
+    <%= image_tag user.facebook_picture_url, class: "avatar-large" %>
+    <% else %>
+    <%= image_tag "blank-avatar.png", class: "avatar-large" %>
+    <% end %>
+    <%= link_to user_path(user) do %>
+    <%= user.first_name + " " + user.last_name %>
+    <% end %>

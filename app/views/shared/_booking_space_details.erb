@@ -1,0 +1,19 @@
+<div class="details">
+    <h4>Where:</h4>  <%= link_to space.name, space_path(space)%>
+     <%= @space.address %>
+    <br>
+    <h4>When:</h4>
+    <%= booking.starts_at.day %>/<%= booking.starts_at.month %>/<%= booking.starts_at.year %>
+
+    at
+
+    <%= booking.starts_at.strftime("%H:%M") %>
+    <br>
+
+    <h4>Duration:</h4> <%= booking.duration %> hours
+
+    <br>
+    <h4>Price:</h4> £<%= booking.price %>
+    <br>
+
+</div>
