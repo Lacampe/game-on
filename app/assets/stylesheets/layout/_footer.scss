@@ -1,1 +1,27 @@
-// Your footer style
+.gameon-footer {
+  width: 100vw;
+  margin-top: 3px;
+  background-color: #7F7F7F;
+  box-shadow: 0px -2px 2px #7F7F7F;
+  padding-top: 20px;
+  p {
+    font-size: 13px;
+    color: #EFEFEF;
+  }
+}
+
+.fa {
+  font-size: 30px;
+  }
+
+
+#company-name {
+  padding-top: 80px;
+}
+
+#social {
+  padding-top: 5px;
+  h5 {
+    color: #EFEFEF;
+  }
+}
