@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :spaces do
     resources :bookings, except: [ :index, :edit, :update ]
+    resources :space_reviews, only: [ :index, :new, :create ]
   end
 end
