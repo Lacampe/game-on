@@ -1,8 +1,17 @@
 
   <h3>Make a booking:</h3>
   <%= simple_form_for [@space, @booking] do |f| %>
-    <%= f.input :date %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+
+
+    <div class="input-group">
+        <input type="text" class="form-control datetimepicker" name="booking[starts_at]">
+        <label class="input-group-addon btn" for="booking[starts_at]">
+           <span class="fa fa-calendar open-datetimepicker"></span>
+        </label>
+    </div>
+    <%#= text_field_tag(:start_time, "", class: "form-control input-lg", placeholder: "Date", id: "datetimepicker12") %>
+    <%= f.input :duration, collection: (1..12), prompt: "How many hours?" %>
     <%= f.submit 'Book now', class: 'navbar-wagon-button' %>
   <% end %>
+
+<%#=  booking.start_time.strftime("%H:%M") %>
