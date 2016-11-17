@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>GAME-ON!</h1>
+
+    <h2> Hi, <%= @booking.space.user.first_name %></h2>
+    <p> <%= @booking.user.first_name %> has requested to book your space! </p>
+    <p>Checkout their  <%= link_to 'request', booking_path(@booking) %> and confirm at your leisure</p>
+  </body>
+</html>
+
+
