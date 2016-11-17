@@ -4,18 +4,18 @@
       <h1>SEARCH. BOOK. PLAY.</h1>
       <p>Book a sport venue around you in a few clicks</p>
     </div>
-    <%= form_tag spaces_path, method: "get", class: "form-inline" do %>
+    <div class="list-inline">
+      <%= form_tag spaces_path, method: "get", class: "form-inline" do %>
       <div class="form-group">
         <%= select_tag :category, options_for_select([["Football"], ["Basketball"], ["Tennis"], ["Squash"]]), class: "form-control input-lg", prompt: "Choose your sport" %>
       </div>
       <div class="form-group">
-        <%= text_field_tag(:location, "", class: "form-control input-lg", placeholder: "Location") %>
+        <%= text_field_tag(:location, "", class: "form-control input-lg", id: "location", placeholder: "Location") %>
       </div>
 
-
-      </div>
       <button type="submit" class="btn btn-lg btn-danger">Search</button>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
