@@ -1,4 +1,5 @@
 class SpaceReviewsController < ApplicationController
+
   before_action :find_space, only: [ :new, :create ]
 
   def index
