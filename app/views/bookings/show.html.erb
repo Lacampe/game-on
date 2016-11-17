@@ -3,7 +3,7 @@
 <%if false && current_user == @user %>
   <% content_for :title, "GameOn - Your Booking" %>
   <div class="container-bookings add-margins">
-    <h3>You have booked:</h3>
+    <h3>You have requested booking:</h3>
     <%= render 'shared/booking_space_details', space: @space, booking: @booking %>
     <%= render 'shared/booking_owner_details', owner: @owner %>
     </div>

@@ -15,22 +15,30 @@ class BookingsController < ApplicationController
   def create
     @booking = @space.bookings.build(booking_params)
     @booking.user = current_user
-    @booking.price = (@space.price_per_hour.to_i * @booking.duration.to_i)
+    @booking.valid?
+    @booking.price = @booking.duration * @space.price_per_hour
     @booking.save
-    UserNotifier.send_user_booking_confirmation_email(@booking).deliver
-    UserNotifier.send_owner_booking_confirmation_email(@booking).deliver
-    redirect_to space_booking_path(@space, @booking)
+    @user = User.find(@booking.user_id)
+    @owner = User.find(@space.user_id)
+
+    UserNotifierMailer.send_user_booking_confirmation_email(@booking, @user).deliver
+    UserNotifierMailer.send_owner_booking_confirmation_email(@booking, @owner).deliver
+
+    redirect_to booking_path(@booking)
   end
 
   def destroy
+    UserNotifierMailer.send_owner_bookingrejected_confirmation_email(@booking).deliver
+    UserNotifierMailer.send_user_bookingrejected_confirmation_email(@booking).deliver
     @booking.destroy
     flash[:notice] = "Booking has been rejected"
-    redirect_to root
+    redirect_to root_path
   end
 
   def confirm
     @booking.confirmed = true
     @booking.save
+    UserNotifierMailer.send_user_bookingconfirmed_confirmation_email(@booking).deliver
     flash[:notice] = "Booking has been confirmed"
     redirect_to booking_path(@booking)
   end
