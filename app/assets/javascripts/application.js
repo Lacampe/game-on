@@ -6,11 +6,20 @@
 //= require attachinary
 //= require underscore
 //= require gmaps/google
-//= require bootstrap-datepicker
+//= require moment
+//= require eonasdan-bootstrap-datetimepicker
 //= require_tree .
 
+// $(document).ready(function () {
+//   $('.datepicker').datepicker();
+// });
+
 $(document).ready(function () {
-  $('.datepicker').datepicker();
+    $('.datetimepicker').datetimepicker({
+        inline: false,
+        sideBySide: false,
+        format: "DD/MM/YYYY HH:mm"
+    });
 });
 
 

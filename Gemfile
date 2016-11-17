@@ -32,13 +32,14 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 source "https://rails-assets.org" do
-  gem 'rails-assets-bootstrap-datepicker'
+  gem 'rails-assets-eonasdan-bootstrap-datetimepicker'
 end
 
 
 gem 'faker'
 
 group :development, :test do
+  gem 'annotate'
   gem 'binding_of_caller'
   gem 'better_errors'
 
