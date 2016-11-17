@@ -34,7 +34,7 @@ class SpacesController < ApplicationController
 
   def create
     @space = Space.new(space_params)
-    # @space.user = current_user
+    @space.user_id = current_user.id
     @space.save
     redirect_to space_path(@space)
   end

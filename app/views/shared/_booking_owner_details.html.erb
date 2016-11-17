@@ -1,0 +1,11 @@
+<h4>Owned by:</h4>
+<% if owner.photo %>
+<%= cl_image_tag owner.photo.path, transformation: [{width: 250, height: 250, gravity: 'face', radius: 'max', crop: 'thumb'}, {width: 100}], class: "avatar-large" %>
+<% elsif owner.facebook_picture_url %>
+<%= image_tag owner.facebook_picture_url, class: "avatar-large" %>
+<% else %>
+<%= image_tag "blank-avatar.png", class: "avatar-large" %>
+<% end %>
+<%= link_to user_path(owner) do %>
+<%= owner.first_name + " " + owner.last_name %>
+<% end %>

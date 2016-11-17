@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  testing
+    <h1>GAME-ON!</h1>
+    <h2>Thanks for the booking request, <%= @booking.user.first_name %>!</h2>
+    <p> <%= @user.first_name %> has been notified and should confirm or deny soon</p>
+    <p><%= link_to 'Keep an eye on the booking', booking_url(@booking) %></p>
+  </body>
+</html>
+
