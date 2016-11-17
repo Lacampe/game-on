@@ -1,5 +1,6 @@
 class SpaceReviewsController < ApplicationController
-  before_action :find_space, only [ :new, :create ]
+
+  before_action :find_space, only: [ :new, :create ]
 
   def index
     @space_reviews = SpaceReview.all
@@ -17,7 +18,7 @@ class SpaceReviewsController < ApplicationController
   private
 
   def space_review_params
-    params.require(:space_reviews).permit(:title, :content, :rating)
+    params.require(:space_review).permit(:title, :content, :rating)
   end
 
   def find_space
