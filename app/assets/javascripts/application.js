@@ -18,7 +18,8 @@ $(document).ready(function () {
     $('.datetimepicker').datetimepicker({
         inline: false,
         sideBySide: false,
-        format: "DD/MM/YYYY HH:mm"
+        format: "DD/MM/YYYY HH:mm",
+        stepping: 30,
     });
 });
 
