@@ -10,7 +10,13 @@
 
 <% elsif current_user == @owner %>
   <div class="container-bookings add-margins">
-  <h3> Confirm the following:</h3>
+
+  <% if booking.confirmed %>
+    <h3>Booking confirmed:</h3>
+  <% else %>
+    <h3> Confirm the following:</h3>
+  <% end %>
+
   <%= render 'shared/booking_space_details', space: @space, booking: @booking %>
   <%= render 'shared/booking_user_details', user: @user %>
   <br>
