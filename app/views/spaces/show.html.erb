@@ -8,30 +8,42 @@
  <%= image_tag(image, class: "space-image") %>
 
 
-  <div class="container">
-    <div class="row">
-      <div class="row col-xs-12 col-lg-7" id="space-info">
-        <div class="card-space col-xs-12">
-          <h1><%= @space.name %></h1>
-          <br>
-          <p>Location: <em><%= @space.address %></em></p>
-          <p>Facility: <em><%= @space.category %></em></p>
-          <br>
-          <h4><strong>Price per hour: £<%= @space.price_per_hour %></strong></h4>
-        </div>
-        <div class="card-space col-xs-12">
-          <h5><strong>Description:</strong></h5>
-          <p><%= @space.description %></p>
-        </div>
+ <div class="container">
+  <div class="row">
+    <div class="row col-xs-12 col-lg-7" id="space-info">
+      <div class="card-space col-xs-12">
+        <h1><%= @space.name %></h1>
+        <br>
+        <p>Location: <em><%= @space.address %></em></p>
+        <p>Facility: <em><%= @space.category %></em></p>
+        <br>
+        <h4><strong>Price per hour: £<%= @space.price_per_hour %></strong></h4>
       </div>
-      <div class="row col-xs-12 col-lg-3 col-lg-offset-2">
-        <div id="sticky-anchor"></div>
-          <div class="card-space" id="sticky">
-          <%= render 'shared/new_booking', space: @space, booking: @booking %>
-        </div>
+      <div class="card-space col-xs-12">
+        <h5><strong>Description:</strong></h5>
+        <p><%= @space.description %></p>
       </div>
     </div>
-  <div class="row">
+    <div class="row col-xs-12 col-lg-3 col-lg-offset-2">
+      <div id="sticky-anchor"></div>
+      <div class="card-space" id="sticky">
+        <%= render 'shared/new_booking', space: @space, booking: @booking %>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 50px;">
+    <div class="card-space col-xs-12 col-lg-8">
+      <div class="card-space">
+        <h3>Reviews:</h3>
+        <% @space.bookings.each do |booking| %>
+          <h4><%= booking.space_review.title %></h4>
+          <p><%= booking.space_review.content %></p>
+          <p><strong>Rating:<%= booking.space_review.rating %>/5</strong></p>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 50px;">
     <div class="card-space col-xs-12 col-lg-8">
       <h3>Location:</h3>
       <div id="map" style="width: 100%; height: 450px;"></div>
@@ -40,17 +52,17 @@
 </div>
 
 <% content_for(:after_js) do %>
-    <%= javascript_tag do %>
-    $(document).ready(function() {
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-    markers = handler.addMarkers(<%= raw @markers.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    if (markers.length == 0) {
-    handler.getMap().setZoom(2);
-  } else if (markers.length == 1) {
-  handler.getMap().setZoom(15);
+<%= javascript_tag do %>
+$(document).ready(function() {
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @markers.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(15);
 }
 });
 });

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161118141534) do
+=======
+
+ActiveRecord::Schema.define(version: 20161118115725) do
+
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +49,7 @@ ActiveRecord::Schema.define(version: 20161118141534) do
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
+<<<<<<< HEAD
   create_table "messages", force: :cascade do |t|
     t.integer  "recipient_id"
     t.integer  "sender_id"
@@ -52,6 +59,16 @@ ActiveRecord::Schema.define(version: 20161118141534) do
     t.datetime "updated_at",   null: false
     t.index ["recipient_id"], name: "index_messages_on_recipient_id", using: :btree
     t.index ["sender_id"], name: "index_messages_on_sender_id", using: :btree
+=======
+  create_table "space_reviews", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "rating"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_space_reviews_on_booking_id", using: :btree
+>>>>>>> master
   end
 
   create_table "spaces", force: :cascade do |t|
@@ -66,6 +83,16 @@ ActiveRecord::Schema.define(version: 20161118141534) do
     t.float    "longitude"
     t.text     "description"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
+  end
+
+  create_table "user_reviews", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "rating"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_user_reviews_on_booking_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,6 +121,11 @@ ActiveRecord::Schema.define(version: 20161118141534) do
 
   add_foreign_key "bookings", "spaces"
   add_foreign_key "bookings", "users"
+<<<<<<< HEAD
   add_foreign_key "messages", "users", column: "recipient_id"
   add_foreign_key "messages", "users", column: "sender_id"
+=======
+  add_foreign_key "space_reviews", "bookings"
+  add_foreign_key "user_reviews", "bookings"
+>>>>>>> master
 end
