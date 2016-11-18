@@ -1,53 +1,72 @@
-.profile-user-info {
+// Breathing row
+.breath {
+  height: 80px;
+}
+
+// Profile info box
+.profile-info {
+  border-radius: 3px;
+  background-color: white;
+  height: 150px;
   position: relative;
-  height: 400px;
-  margin-left: 100px;
-  margin-top: 50px;
-  border: 0.5px solid #e6e6e6;
-  border-radius: 1px;
-  box-shadow: 0.5px 0.5px 1px #f2f2f2;
+  box-shadow: 1px 1px 2px lightgrey;
 }
 
-.profile-user-info-avatar {
+.profile-info .profile-info-avatar {
   position: absolute;
-  height: 70px;
-  width: 70px;
-  top: 20px;
-  left: 90px;
+  top: -25px;
+  left: 250px;
+  box-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);
 }
 
-.profile-user-info h3 {
+.profile-info .profile-info-name {
   position: absolute;
-  font-size: 23px;
-  top: 100px;
-  left: 23px;
+  top: 15px;
+  left: 170px;
 }
 
-.profile-user-info p {
-  position: absolute;
+.profile-info p em {
   font-size: 12px;
-  top: 150px;
-  left: 32px;
+  position: absolute;
+  top: 70px;
+  left: 200px;
 }
 
-.profile-user-about {
-  height: 400px;
-  margin-top: 50px;
-  border: 0.5px solid #e6e6e6;
-  border-radius: 1px;
-  box-shadow: 0.5px 0.5px 1px #f2f2f2;
-}
-
-.box-banner {
+// Profile bookings box
+.profile-bookings {
+  border-radius: 3px;
+  background-color: white;
+  height: 250px;
   position: relative;
-  background-color: #d9d9d9;
-  height: 50px;
-  width: 100%;
 }
 
-.box-banner h4 {
-  position: relative;
-  top: 12px;
-  left: 10px;
-  margin-top: 0px;
+.profile-bookings .col-sm-3 {
+  position: absolute;
+  top: 50px;
 }
+
+// Profile spaces box
+.profile-spaces {
+  border-radius: 3px;
+  background-color: white;
+  height: 250px;
+  position: relative;
+}
+
+// Profile box reviews
+.profile-reviews {
+  border-radius: 3px;
+  background-color: white;
+  height: 250px;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
