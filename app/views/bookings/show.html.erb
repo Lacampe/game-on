@@ -1,23 +1,29 @@
-<% content_for :title, "GameOn - Booking created!" %>
-<div class="container-bookings add-margins">
-  <h2>Congratulations!</h2>
-  <h3>You have successfully booked:</h3>
-  <div class="details">
-  <% booking = @space.bookings.last %>
-  <h4>Where:</h4>  <%= link_to booking.space.name, space_path(booking.space)%>
-   <%= booking.space.address %>
-  <br>
-  <h4>When:</h4> <%= booking.start_time.day %>/<%= booking.start_time.month %>/<%= booking.start_time.year %>
+<%# if false &&  %>
 
-  at
+<%if current_user == @user %>
+  <% content_for :title, "GameOn - Your Booking" %>
+  <div class="container-bookings add-margins">
+    <h3>You have requested booking:</h3>
+    <%= render 'shared/booking_space_details', space: @space, booking: @booking %>
+    <%= render 'shared/booking_owner_details', owner: @owner %>
+    </div>
 
-  <%= booking.start_time.strftime("%H:%M") %>
+<% elsif current_user == @owner %>
+  <div class="container-bookings add-margins">
+  <h3> Confirm the following:</h3>
+  <%= render 'shared/booking_space_details', space: @space, booking: @booking %>
+  <%= render 'shared/booking_user_details', user: @user %>
   <br>
-  <% duration_min = booking.end_time - booking.start_time %>
-  <h4>Duration:</h4> <%= (duration_min / 60/60).round(1) %> hours
-
-  <br>
-  <h4>Price:</h4> £<%= (duration_min / 60/60 * booking.space.price_per_hour).round %>
-  <br>
+  <% if @booking.confirmed %>
+    <% content_for :title, "GameOn - Your Space Booked" %>
+  <% else %>
+    <% content_for :title, "GameOn - Confirm Booking" %>
+    <br>
+    <%= link_to "Confirm", confirm_booking_path(@booking), method: :patch, class:"btn btn-success" %>
+    <%= link_to "Reject",  space_booking_path(@space, @booking), method: :delete, class:"btn btn-danger" %>
+  <% end %>
   </div>
-</div>
+
+<% end %>
+
+<!-- space_booking DELETE   /spaces/:space_id/bookings/:id(.:format)      bookings#destroy -->
