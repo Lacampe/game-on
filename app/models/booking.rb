@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #  starts_at  :datetime
 #  ends_at    :datetime
+#  confirmed  :boolean          default(FALSE)
 #
 
 class Booking < ApplicationRecord
