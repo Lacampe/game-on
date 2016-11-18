@@ -1,0 +1,20 @@
+<div>
+   <% if booking.space.photos %>
+    <% image = cl_image_path(booking.space.photos.first.path, width: 300, height: 200, crop: :fill) %>
+  <% else %>
+    <%= image = image_path('logo.png') %>
+  <% end %>
+
+  <div class="mini-card">
+    <img class="mini-card-img-top" src="<%= image %>" alt="Card image cap">
+    <div class="mini-card-block">
+      <h4 class="mini-card-text"><%= booking.space.name %></h4>
+      <p class="mini-card-text"><%= booking.space.address %></p>
+      <div class="banner-price">
+      <p><%= booking.starts_at.day %>/<%= booking.starts_at.month %>/<%= booking.starts_at.year %></p>
+      </div>
+      <div class="banner-category"> <%= image_tag "#{booking.space.category}.png" %></div>
+
+      </div>
+  </div>
+</div>
