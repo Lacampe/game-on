@@ -25,8 +25,8 @@ class Booking < ApplicationRecord
   end
 
   def duration
-    return unless ends_at? && starts_at?
+    return unless self.ends_at? && self.starts_at?
 
-    ((ends_at - starts_at) / 1.hour).round
+    ((self.ends_at - self.starts_at) / 1.hour).round
   end
 end
