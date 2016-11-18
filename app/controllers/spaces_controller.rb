@@ -37,6 +37,8 @@ class SpacesController < ApplicationController
     @space.user_id = current_user.id
     @space.save
     redirect_to space_path(@space)
+    # UserMailer.send_user_space_confirmation_email(current_user, @space).deliver
+    UserNotifierMailer.send_user_space_confirmation_email(current_user, @space).deliver
   end
 
   def edit

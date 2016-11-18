@@ -20,15 +20,17 @@ class BookingsController < ApplicationController
     @booking.save
     @user = User.find(@booking.user_id)
     @owner = User.find(@space.user_id)
-
-    UserNotifierMailer.send_user_booking_confirmation_email(@booking, @user).deliver
-    UserNotifierMailer.send_owner_booking_confirmation_email(@booking, @owner).deliver
+    # UserMailer.send_user_booking_confirmation_email(@booking, @owner, @user).deliver
+    # UserMailer.send_owner_booking_confirmation_email(@booking, @owner, @user).deliver
+    UserNotifierMailer.send_user_booking_confirmation_email(@booking, @owner, @user).deliver
+    UserNotifierMailer.send_owner_booking_confirmation_email(@booking, @owner, @user).deliver
 
     redirect_to booking_path(@booking)
   end
 
   def destroy
-    UserNotifierMailer.send_owner_bookingrejected_confirmation_email(@booking).deliver
+    @user = User.find(@booking.user_id)
+    # UserMailer.send_user_bookingrejected_confirmation_email(@user, @booking).deliver
     UserNotifierMailer.send_user_bookingrejected_confirmation_email(@booking).deliver
     @booking.destroy
     flash[:notice] = "Booking has been rejected"
@@ -38,6 +40,8 @@ class BookingsController < ApplicationController
   def confirm
     @booking.confirmed = true
     @booking.save
+    @user = User.find(@booking.user_id)
+    # UserMailer.send_user_bookingconfirmed_confirmation_email(@user, @booking).deliver
     UserNotifierMailer.send_user_bookingconfirmed_confirmation_email(@booking).deliver
     flash[:notice] = "Booking has been confirmed"
     redirect_to booking_path(@booking)
