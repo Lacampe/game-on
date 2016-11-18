@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
@@ -8,11 +9,12 @@ Rails.application.routes.draw do
 
   resources :spaces do
     resources :bookings, except: [ :show, :index, :edit, :update ]
-    resources :space_reviews, only: [ :index, :new, :create ]
   end
 
 
   resources :bookings, only: [ :show ] do
     patch :confirm, on: :member
+    resources :user_reviews, only: [ :new, :create ]
+    resources :space_reviews, only: [ :new, :create ]
   end
 end
