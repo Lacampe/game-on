@@ -1,53 +1,79 @@
-.profile-user-info {
-  position: relative;
-  height: 400px;
-  margin-left: 100px;
-  margin-top: 50px;
-  border: 0.5px solid #e6e6e6;
+// Breathing row
+.breath {
+  height: 80px;
+}
+
+// Profile info box
+.profile-info {
+  border: 0.5px solid rgb(13, 13, 13);
   border-radius: 1px;
-  box-shadow: 0.5px 0.5px 1px #f2f2f2;
+  box-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);
+  background-color: white;
+  height: 150px;
+  position: relative;
 }
 
-.profile-user-info-avatar {
+.profile-info .profile-info-avatar {
   position: absolute;
-  height: 70px;
-  width: 70px;
-  top: 20px;
-  left: 90px;
+  top: -25px;
+  left: 250px;
+  box-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);
 }
 
-.profile-user-info h3 {
+.profile-info .profile-info-name {
   position: absolute;
-  font-size: 23px;
-  top: 100px;
-  left: 23px;
+  top: 15px;
+  left: 170px;
 }
 
-.profile-user-info p {
-  position: absolute;
+.profile-info p em {
   font-size: 12px;
-  top: 150px;
-  left: 32px;
+  position: absolute;
+  top: 70px;
+  left: 200px;
 }
 
-.profile-user-about {
-  height: 400px;
-  margin-top: 50px;
-  border: 0.5px solid #e6e6e6;
+// Profile bookings box
+.profile-bookings {
+  border: 0.5px solid rgb(13, 13, 13);
   border-radius: 1px;
-  box-shadow: 0.5px 0.5px 1px #f2f2f2;
+  box-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);
+  background-color: white;
+  height: 250px;
+  position: relative;
 }
 
-.box-banner {
+// Profils spaces box
+.profile-spaces {
+  border: 0.5px solid rgb(13, 13, 13);
+  border-radius: 1px;
+  box-shadow: 0.5px 0.5px 1px rgb(0, 0, 0);
+  background-color: white;
+  height: 250px;
   position: relative;
-  background-color: #d9d9d9;
-  height: 50px;
+}
+
+// Profile box banner
+.profile-box-banner{
+  height: 40px;
   width: 100%;
+  background-color: rgb(46, 184, 46);
+  position: absolute;
+  top: 0px;
 }
 
-.box-banner h4 {
-  position: relative;
-  top: 12px;
+.profile-box-banner h4{
+  color: white;
+  position: absolute;
+  top: -5px;
   left: 10px;
-  margin-top: 0px;
 }
+
+
+
+
+
+
+
+
+
