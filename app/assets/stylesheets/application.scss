@@ -27,6 +27,26 @@
   padding: 2px;
 }
 
+
+.wrapper-full {
+  height: 75vh;
+}
+
+.message-inbox {
+  border: 1px solid darkgrey;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.inbox {
+  margin: 10px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 5px;
+  height: 73vh;
+}
+
 body {
   background-color: rgb(242, 242, 242);
 }

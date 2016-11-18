@@ -32,7 +32,11 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:facebook]
   has_many :spaces
   has_many :bookings
+
+  has_many :sent_messages, :class_name => 'Message', :foreign_key => 'sender_id'
+  has_many :received_messages, :class_name => 'Message', :foreign_key => 'recipient_id'
   has_many :user_reviews, through: :bookings, dependent: :destroy
+
   has_attachment :photo
 
   after_create :send_welcome_email

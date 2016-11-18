@@ -1,0 +1,13 @@
+<div class="form add-margins-2">
+
+<h3>Send a message</h3>
+  <%= simple_form_for [@user, @message] do |f| %>
+    <%= f.input :subject%>
+    <%= f.input :content %>
+    <%= f.hidden_field :recipient, class: 'hidden', value: @recipient.id  %>
+    <br>
+    <div class="text-center">
+    <%= f.submit 'Send', class: 'navbar-wagon-button' %>
+    </div>
+  <% end %>
+</div>
