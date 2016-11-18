@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :find_space, only: [ :new, :create, :destroy ]
   before_action :find_booking, only: [ :show, :destroy, :confirm]
+  skip_before_action :authenticate_user, only: [ :show, :index ]
 
   def show
     @space = Space.find(@booking.space_id)
