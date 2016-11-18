@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
     @booking.save
     @user = User.find(@booking.user_id)
     # UserMailer.send_user_bookingconfirmed_confirmation_email(@user, @booking).deliver
-    UserNotifierMailer.send_user_bookingconfirmed_confirmation_email(@booking).deliver
+    UserNotifierMailer.send_user_bookingconfirmed_confirmation_email(@user, @booking).deliver
     flash[:notice] = "Booking has been confirmed"
     redirect_to booking_path(@booking)
   end
