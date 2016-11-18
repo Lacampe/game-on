@@ -6,17 +6,18 @@ class UserReviewsController < ApplicationController
 
   def new
     @user_review = UserReview.new
+    @booking = Booking.find(params[:booking_id])
   end
 
   def create
     @booking = Booking.find(params[:booking_id])
     @user_review = UserReview.new(user_review_params)
     @user_review.booking = @booking
-    if @user_review.save
-      redirect_to user_path(@booking.user)
-    else
+    @user_review.save
+    redirect_to user_path(@booking.user)
+    # else
 
-    end
+    # end
   end
 
   private

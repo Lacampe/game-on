@@ -1,2 +1,4 @@
-<h1>UserReviews#new</h1>
-<p>Find me in app/views/user_reviews/new.html.erb</p>
+
+  <h3 style="margin-left: 300px; margin-top: 50px;">Write your review for <%= @booking.user.name %>:</h3>
+
+<%= render 'shared/new_review_form', booking: @booking, review: @user_review %>
