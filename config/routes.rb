@@ -22,5 +22,5 @@ Rails.application.routes.draw do
     patch :confirm, on: :member
   end
 
-  resources :messages, only: [ :index ]
+  resources :messages, only: [ :index, :create ]
 end
