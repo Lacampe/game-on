@@ -4,10 +4,8 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-  testing
     <h1>GAME-ON!</h1>
-    <h2>Your booking request has been confirmed, <%= @user.first_name %>!</h2>
-    <p>Checkout your  <%= link_to 'booking', booking_url(@booking) %></p>
+    <h2>Thank you for listing your venue with us, <%= @user.first_name %>!</h2>
+    <p>Checkout your space: <%= link_to "#{@space.name}", space_url(@space) %></p>
   </body>
 </html>
-
