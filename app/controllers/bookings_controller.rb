@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
   def destroy
     @user = User.find(@booking.user_id)
     # UserMailer.send_user_bookingrejected_confirmation_email(@user, @booking).deliver
-    UserNotifierMailer.send_user_bookingrejected_confirmation_email(@booking).deliver
+    UserNotifierMailer.send_user_bookingrejected_confirmation_email(@user, @booking).deliver
     @booking.destroy
     flash[:notice] = "Booking has been rejected"
     redirect_to root_path
