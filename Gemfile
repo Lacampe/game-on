@@ -38,7 +38,7 @@ end
 
 gem 'faker'
 
-gem "letter_opener", group: :development
+gem "letter_opener" #, group: :development
 
 group :development, :test do
   gem 'annotate'
