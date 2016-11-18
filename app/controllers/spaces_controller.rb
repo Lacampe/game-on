@@ -1,5 +1,6 @@
 class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :update, :destroy, :edit]
+  skip_before_action :authenticate_user!, only: [ :show, :index ]
   # before_action :set_user, only: [:show]
 
   def index
@@ -37,6 +38,8 @@ class SpacesController < ApplicationController
     @space.user_id = current_user.id
     @space.save
     redirect_to space_path(@space)
+    # UserMailer.send_user_space_confirmation_email(current_user, @space).deliver
+    UserNotifierMailer.send_user_space_confirmation_email(current_user, @space).deliver
   end
 
   def edit
