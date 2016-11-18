@@ -7,4 +7,12 @@ class UserMailer < ApplicationMailer
 
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def send_user_booking_confirmation_email(booking)
+    @booking = booking
+  end
+
+  def send_owner_booking_confirmation_email(booking)
+    @booking = booking
+  end
 end

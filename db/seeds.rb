@@ -73,7 +73,7 @@ london_addresses = ["SW1X 8NX", "SW17 8DA", "SW11 3ES", "SW2 2QL", "SW18 3JT", "
 "SW4 7NH", "SW19 4YB", "SW19 1DR", "SW19 8YB", "SW18 4NL", "SW11 1AS", "SW19 2TQ", "SW8 2LE", "SW17 7BE"]
 
 london_addresses.each do |address|
-  space = Space.new(name: Faker::Educator.secondary_school, address: address, price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..40),
+  space = Space.new(name: Faker::Educator.secondary_school, address: address, price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..15),
     description: "This is a nice court. Just repolished last month. Only white-soled shoes allowed. No food and drink (just water) on the court.")
   space.save!
   case space.category
@@ -93,7 +93,7 @@ end
 bristol_addresses = ["BS37 7YL", "BS8 4AZ", "BS8 4AZ", "BS8 4AZ", "BS8 4AZ", "BS7 8RA", "BS4 5EQ", "BS23 4BY", "BS15 4EE"]
 
 bristol_addresses.each do |address|
-  space = Space.new(name: Faker::Educator.secondary_school, address: address, price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..40),
+  space = Space.new(name: Faker::Educator.secondary_school, address: address, price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..15),
     description: "This is a nice court. Just repolished last month. Only white-soled shoes allowed. No food and drink (just water) on the court.")
   space.save!
   case space.category
@@ -112,7 +112,7 @@ end
 
 cambridge_addresses = ["CB7 5XU", "CB9 9EE", "CB21 4DS", "CB8 0BJ", "CB5 8PP", "CB2 9JW", "CB4 1QA", "CB4 1FS", "CB4 3HG", "CB2 1XB"]
 cambridge_addresses.each do |address|
-  space = Space.new(name: Faker::Educator.secondary_school, address: address, price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..40),
+  space = Space.new(name: Faker::Educator.secondary_school, address: address, price_per_hour: rand(30..200), category: ["Football", "Basketball", "Tennis", "Squash"].sample, user_id: rand(1..15),
     description: "This is a nice court. Just repolished last month. Only white-soled shoes allowed. No food and drink (just water) on the court.")
   space.save!
   case space.category

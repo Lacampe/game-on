@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   resources :users
 
   resources :spaces do
-    resources :bookings, except: [ :index, :edit, :update ]
+    resources :bookings, except: [ :show, :index, :edit, :update ]
+    resources :space_reviews, only: [ :index, :new, :create ]
+  end
+
+
+  resources :bookings, only: [ :show ] do
+    patch :confirm, on: :member
   end
 end
