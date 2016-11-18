@@ -15,34 +15,65 @@
         <% end %>
         <h3 class="profile-info-name"><%= @user.full_name %></h3>
         <p><em>Member since <%= I18n.l(@user.created_at, format: "%B %Y") %></em></p>
+        <%= link_to "Send Message", new_user_message_path(@user) %>
       </div>
     </div>
     <div class="col-sm-3"></div>
   </div>
   <div class="row breath"></div>
-  <div class="row">
+  <div class="row" style="background-color: white; border-radius: 3px; box-shadow: 1px 1px 2px lightgrey;">
+    <div class="row">
+    <div class="col-sm-2 " style="margin-left: 20px">
+      <h4>My Bookings</h4>
+    </div>
+    </div>
+    <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
-      <div class="profile-bookings">
-        <div class="profile-box-banner">
-          <h4>My Bookings</h4>
+      <div class="row">
+        <% @user.bookings.each do |booking| %>
+          <div class="col-sm-4">
+            <%= render 'shared/mini_card', booking: booking %>
+          <% end %>
         </div>
       </div>
     </div>
-    <div class="col-sm-1"></div>
+    </div>
   </div>
   <div class="row breath"></div>
-  <div class="row">
+    <div class="row" style="background-color: white; border-radius: 3px; box-shadow: 1px 1px 2px lightgrey;">
+      <div class="row">
+      <div class="col-sm-2 " style="margin-left: 20px">
+        <h4>My Spaces</h4>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="row">
+
+          </div>
+        </div>
+      </div>
+      </div>
+  <div class="row breath"></div>
+  <div class="row" style="background-color: white; border-radius: 3px; box-shadow: 1px 1px 2px lightgrey;">
+    <div class="row">
+    <div class="col-sm-2 " style="margin-left: 20px">
+      <h4>My Reviews</h4>
+    </div>
+    </div>
+    <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
-      <div class="profile-spaces">
-        <div class="profile-box-banner">
-          <h4>My Spaces</h4>
+      <div class="row">
+
         </div>
       </div>
     </div>
-    <div class="col-sm-1"></div>
-  </div>
+    </div>
+  <div class="row breath"></div>
+  <div class="row breath"></div>
 </div>
 
 
@@ -53,24 +84,6 @@
 
 
 
-<!--
-
-
-
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-1"></div>
-  <div class="col-sm-7">
-    <div class="profile-user-about">
-      <div class="box-banner">
-        <h4>My Bookings</h4>
-      </div>
-    </div>
-  </div>
-</div>
-
- -->
 
 
 

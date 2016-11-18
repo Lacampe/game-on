@@ -1,0 +1,64 @@
+.mini-card-text {
+  color: black;
+}
+
+.mini-card {
+  box-shadow: 1px 1px 2px lightgrey;
+  border-radius: 3px;
+  margin: 10px 0px 5px 0px;
+  background-color: white;
+}
+
+.mini-card-block {
+  margin: 5px;
+}
+
+.mini-card-block h4 {
+  font-size: 14px;
+}
+
+.mini-card-block p {
+  font-size: 12px;
+}
+
+img.mini-card-img-top {
+  width: 100%;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+
+}
+
+.banner-category img {
+  position: absolute;
+  bottom: 45px;
+  right: 28px;
+  width: 7%;
+}
+
+.banner-price {
+  position: absolute;
+  bottom: 2px;
+  right: 12px;
+  color: white;
+  width: 60px;
+  text-align: center;
+}
+
+.banner-price p {
+  font-size: 11px !important;
+}
+
+p {
+   font-size: 16px;
+   color: black;
+}
+
+h1 {
+   font-weight: 500;
+   color: black;
+}
+
+h4 {
+  color: black;
+}
+

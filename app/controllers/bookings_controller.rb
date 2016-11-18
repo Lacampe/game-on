@@ -2,6 +2,10 @@ class BookingsController < ApplicationController
   before_action :find_space, only: [ :new, :create, :destroy ]
   before_action :find_booking, only: [ :show, :destroy, :confirm]
 
+  def index
+    @bookings = Booking.all
+  end
+
   def show
     @space = Space.find(@booking.space_id)
     @user = User.find(@booking.user_id)
