@@ -1,0 +1,65 @@
+.home-banner {
+  background-image: linear-gradient(-225deg, rgba(30,30,30,0.1) 30%, rgba(46,46,46,0.1) 80%), image-url('tennis-background.jpg');
+  background-size: cover;
+  // background-position: 50% 30%;
+  height: calc(100vh - 70px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    h1 {
+    margin-top: -150px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+    p {
+    margin-bottom: 50px;
+    font-size: 20px;
+    opacity: 0.8;
+    font-weight: lighter;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+}
+
+.home-search-form {
+  padding: 3px;
+}
+
+.search-btn {
+  background-color: #58D063;
+  color: white;
+
+  &:hover {
+    background-color: #4ccd59;
+    color: white;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+  }
+}
+
+.concept-content {
+  height: 30vh;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.concept-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  h4 {
+    font-weight: bold;
+  }
+  p {
+    opacity: 0.8;
+  }
+}
