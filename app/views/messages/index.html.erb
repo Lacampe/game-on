@@ -1,0 +1,40 @@
+<div class="wrapper-full">
+
+  <div class="inbox">
+  <%= content_for :title, "Your inbox" %>
+  <h2 class="text-center">Your inbox</h2>
+  <br>
+  <% if @inbox_messages %>
+    <% @inbox_messages.each do |message| %>
+    <div class="message-inbox">
+    <p>From: <%= message.sender.first_name + " " + message.sender.last_name %></p>
+    <p>Subject: <%= message.subject %></h4>
+    <hr>
+    <p> <%= message.content %></p>
+    </div>
+    <% end %>
+  <% else %>
+    No messages, keep browsing!
+  <% end %>
+  </div>
+
+
+  <div class="outbox">
+    <% if @outbox_messages %>
+    <% @outbox_messages.each do |message| %>
+      <div class="message-inbox">
+      <p>To: <%= message.recipient.first_name + " " + message.recipient.last_name %></p>
+      <p>Subject: <%= message.subject %></h4>
+      <hr>
+      <p> <%= message.content %></p>
+      </div>
+      <% end %>
+  <% else %>
+  <br>
+  <br>
+  <br>
+    No messages sent yet, reach out!
+  <% end %>
+  </div>
+
+</div>
