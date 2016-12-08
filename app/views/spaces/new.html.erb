@@ -1,18 +1,24 @@
 <br>
 <h1 class="text-center">Rent your venue through us</h1>
  <% content_for :title, "GameOn - register your venue!" %>
-<div class="wrapper add-margins-2">
+<div class="wrapper-form">
+<div class="new-space-form">
 <%= simple_form_for(@space) do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :name %>
+  <div class="form-narrow">
   <%= f.input :category, collection: ["Squash", "Basketball", "Football", "Tennis"], prompt: "Choose sport" %>
+  </div>
   <%= f.input :address %>
+  <div class="form-narrow">
   <%= f.input :price_per_hour, label: "Price per hour (£)" %>
+  </div>
   <%= f.input :photos, as: :attachinary %>
   <%= f.input :description %>
 <div class="buttons text-center">
-  <%= f.button :submit, class: "navbar-wagon-item navbar-wagon-button btn btn-success"%>
+  <%= f.button :submit, class: "btn-form"%>
 </div>
 <% end %>
+</div>
 </div>

@@ -1,7 +1,8 @@
 <br>
 <h2 class="text-center">Sign up</h2>
  <% content_for :title, "GameOn - sign up!" %>
-<div class="wrapper add-margins">
+<div class="wrapper-form">
+<div class="form">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -15,13 +16,14 @@
   </div>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: 'navbar-wagon-button' %>
     <br>
     <br>
     <%= render "devise/shared/links" %>
   </div>
 <% end %>
-<div class="connect-link text-center>
 
+
+</div>
 </div>
 </div>
