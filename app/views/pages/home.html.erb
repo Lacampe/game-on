@@ -1,4 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(-160deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path('tennis-background.jpg') %>)">
+
+<div class="home-banner"">
   <div class="banner-content">
     <div id="presentation">
       <h1>SEARCH. BOOK. PLAY.</h1>
@@ -6,36 +7,37 @@
     </div>
     <div class="list-inline">
       <%= form_tag spaces_path, method: "get", class: "form-inline" do %>
-      <div class="form-group">
-        <%= select_tag :category, options_for_select([["Football"], ["Basketball"], ["Tennis"], ["Squash"]]), class: "form-control input-lg", prompt: "Choose your sport" %>
+      <div class="form-group home-search-form">
+        <%= select_tag :category, options_for_select([["Football"], ["Basketball"], ["Tennis"], ["Squash"]]), class: "form-control input-lg", prompt: "Choose a sport" %>
       </div>
-      <div class="form-group">
-        <%= text_field_tag(:location, "", class: "form-control input-lg", id: "location", placeholder: "Location") %>
+      <div class="form-group home-search-form">
+        <%= text_field_tag(:location, "", class: "form-control input-lg", id: "location", placeholder: "Choose a location") %>
       </div>
-
-      <button type="submit" class="btn btn-lg btn-danger">Search</button>
+      <div class="form-group home-search-form">
+        <button type="submit" class="btn btn-lg search-btn">Search</button>
+      </div>
       <% end %>
     </div>
   </div>
 </div>
-<div class="gameon-footer">
-<div class="row">
-    <div class="col-sm-4 text-center">
-      <p>About Us</p>
-      <p>Contact Us</p>
-      <p>Terms and Conditions</p>
-      <p>Privacy Policy</p>
-    </div>
 
-    <div class="col-sm-4 text-center" id="company-name">
-      <p>© 2016 GameOn Ltd</p>
+<div class="home-concept">
+  <div class="concept-content">
+    <div class="concept-flex">
+      <%= image_tag "loupe.png", width: "90px" %>
+      <h4>Search</h4>
+      <p>Find a sport venue around you</p>
     </div>
+    <div class="concept-flex">
+      <%= image_tag "calendar.png", width: "90px" %>
+      <h4>Book</h4>
+      <p>Book in a few clicks</p>
+    </div>
+    <div class="concept-flex">
+      <%= image_tag "tennis-ball-game-on.png", width: "90px" %>
+      <h4>Play</h4>
+      <p>Enjoy your favorite sports</p>
 
-    <div class="col-sm-4 text-center" id="social">
-      <h5>Follow Us</h5>
-      <i class="fa fa-facebook-square" aria-hidden="true"></i>
-      <i class="fa fa-twitter-square" aria-hidden="true"></i>
-      <i class="fa fa-instagram" aria-hidden="true"></i>
     </div>
   </div>
 </div>

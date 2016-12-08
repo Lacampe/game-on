@@ -52,18 +52,19 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 15px;
-  opacity: 0.8;
-  border-radius: 5px;
+  border-radius: 4px;
   line-height: 34px;
-  background-color: rgb(46, 184, 46);
+  background-color: #4ccd59;
   color: white;
   font-size: 14px;
-  border: 1px solid rgb(46, 184, 46);
   box-shadow: 1px 1px 2px #cccccc;
+  &:hover {
+    background-color: #38c746 !important;
+    box-shadow: 1px 1px 2px #cccccc !important;
+    color: white;
+  }
 }
-.navbar-wagon-button:hover {
-  opacity: 0.9;
-}
+
 
 /* Navbar notification */
 .green-theme {
